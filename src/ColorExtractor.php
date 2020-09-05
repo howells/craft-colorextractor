@@ -75,11 +75,9 @@ class ColorExtractor extends Plugin
             Asset::class,
             Asset::EVENT_AFTER_SAVE,
             function (ModelEvent $event) {
-                if ($event->isNew) {
-                    /** @var Asset $element */
-                    $asset = $event->sender;
-                    $this->assetUpload->onSaveAsset($asset);
-                }
+								/** @var Asset $element */
+								$asset = $event->sender;
+								$this->assetUpload->onSaveAsset($asset);
             }
         );
     }
